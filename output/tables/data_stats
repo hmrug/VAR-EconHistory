@@ -1,0 +1,15 @@
+\begin{tabular}{lrr}
+\toprule
+{} &  Industrial Production &     CPI \\
+\midrule
+count &                 252.00 &  252.00 \\
+mean  &                  29.94 &   55.55 \\
+std   &                   6.11 &    6.80 \\
+min   &                  17.60 &   43.70 \\
+25\%   &                  25.90 &   48.70 \\
+50\%   &                  29.75 &   58.40 \\
+75\%   &                  33.92 &   60.20 \\
+max   &                  44.20 &   72.90 \\
+\bottomrule
+\end{tabular}
+
