@@ -79,7 +79,7 @@ def HPfilter(data, mu):
     cycle = data - trend
     return trend, cycle
 
-Y_trend, Y_cycle = HPfilter(output,1600)
+Y_trend, Y_cycle = HPfilter(output,129600)
 
 # Figure 1 - Industrial Production: data, trend, cycle
 timeHorizon = np.array(data.index)
@@ -103,9 +103,9 @@ for i in np.arange(2):
 ax[0].legend(['Industrial Production','Trend'],
                loc='best',frameon=1,prop={'size': 12})
 
-ax[1].set_yticks(np.arange(-6,6,2))
-ax[1].axhline(y=-2,ls='--',c='gray')
-ax[1].axhline(y=2,ls='--',c='gray')
+ax[1].set_yticks(np.arange(-10,10,2.5))
+ax[1].axhline(y=-5,ls='--',c='gray')
+ax[1].axhline(y=5,ls='--',c='gray')
 plt.tight_layout()
 
 # Figure 2 - CPI
