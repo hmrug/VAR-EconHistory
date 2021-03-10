@@ -3,6 +3,7 @@
 \usepackage{natbib,setspace,amsmath,graphicx,float,booktabs}
 \usepackage[skip=0.5\baselineskip]{caption}
 \usepackage[title]{appendix}
+\usepackage{blindtext}
 \bibliographystyle{unsrtnat}
 
 \onehalfspacing
@@ -127,40 +128,17 @@ In this paper, vector autoregression is used to obtain impulse responses and for
 		\mathbf{u}_{\mathbf{t}}=\mathbf{S} \epsilon_{\mathbf{t}}
 \end{equation}
 
-To find \(\bf S\), first lets start with the moving average representations of reduced form VAR (equation 1) and the structural model (equation 2).
-
-\begin{equation} \label{eq:5}
-\begin{split}
-		\mathbf{y}_{\mathbf{t}} &=\mathbf{B}(\mathbf{L}) \mathbf{u}_{\mathbf{t}}, \\
-		\mathbf{y}_{\mathbf{t}} &=\mathbf{C}(\mathbf{L}) \epsilon_{\mathbf{t}}
-\end{split}
-\end{equation}
-
-After substituting for \(\bf u_t\) and simplifying
-
-\begin{equation} \label{eq:6}
-		\mathbf{B}(L) \mathbf{S}=\mathbf{C}(L)
-\end{equation}
-
-The long-run coefficient matrix is \(\bf C(1) = B(1)S\), and so to get \(\bf S\), long-run \(\bf C(1)\) is needed. Postmultiplying \(\bf C(1)\) with its transpose gives
-
-\begin{equation} \label{eq:7}
-		\mathbf{B}(1) \mathbf{S S}^{\prime} \mathbf{B}(1)^{\prime}=\mathbf{C}(1) \mathbf{S}^{-1} \mathbf{S} \mathbf{S}^{\prime}\left(\mathbf{S}^{\prime}\right)^{-1} \mathbf{C}(1)^{\prime}=\mathbf{C}(1) \mathbf{C}(1)^{\prime}.
-\end{equation}
-
-Cholesky decomposition of the expression above produces the restricted long-run coefficient matrix \(\bf C(1)\), that allows to calculate matrix \(\bf S\).
-
 \subsection{Impulse Responses}
 
 Impact matix \(\bf S\) connects structural shocks \(\bf e_t\) to the reduced form residuals \(\bf u_t\)
 
-\begin{equation} \label{eq:8}
+\begin{equation} \label{eq:5}
 		\mathbf{u}_{\mathbf{t}}=\mathbf{S} \epsilon_{\mathbf{t}}
 \end{equation}
 
-To find S first lets start with the moving average representations of reduced form VAR equation 1 and the structural model eq2.
+To find S first lets start with the moving average representations of reduced form VAR (equation 1) and the structural model (equation 2).
 
-\begin{equation} \label{eq:9}
+\begin{equation} \label{eq:6}
 \begin{split}
 		\mathbf{y}_{\mathbf{t}} &=\mathbf{B}(\mathbf{L}) \mathbf{u}_{\mathbf{t}}, \\
 		\mathbf{y}_{\mathbf{t}} &=\mathbf{C}(\mathbf{L}) \epsilon_{\mathbf{t}}
@@ -169,13 +147,13 @@ To find S first lets start with the moving average representations of reduced fo
 
 After substituting for u t and simplifying
 
-\begin{equation} \label{eq:10}
+\begin{equation} \label{eq:7}
 		\mathbf{B}(L) \mathbf{S}=\mathbf{C}(L)
 \end{equation}
 
 The long-run coefficient matrix is \(\bf C(1) = B(1)S\), and so to get \(\bf S\), long-run \(\bf C(1)\) is needed. Postmultiplying C(1) with its transpose gives
 
-\begin{equation} \label{eq:11}
+\begin{equation} \label{eq:8}
 		\mathbf{B}(1) \mathbf{S S}^{\prime} \mathbf{B}(1)^{\prime}=\mathbf{C}(1) \mathbf{S}^{-1} \mathbf{S} \mathbf{S}^{\prime}\left(\mathbf{S}^{\prime}\right)^{-1} \mathbf{C}(1)^{\prime}=\mathbf{C}(1) \mathbf{C}(1)^{\prime}.
 \end{equation}
 
@@ -185,13 +163,13 @@ Cholesky decomposition of the expression above produces the restricted long-run 
 
 Forecast error variances for two variables \((k=1,2)\) can be expressed as
 
-\begin{equation} \label{eq:12}
+\begin{equation} \label{eq:9}
 		\mathrm{E}\left[\left(y_{k, t+1}-\hat{y}_{k, t+1}\right)^{2}\right]=\mathbf{e}_{k} \mathbf{\Sigma} \mathbf{e}_{k}^{\prime}=\mathbf{e}_{k} \mathbf{S S}^{\prime} \mathbf{e}_{k}^{\prime}=\mathbf{e}_{k} \mathbf{C}_{0} \mathbf{C}_{0}^{\prime} \mathbf{e}_{k}^{\prime}.
 \end{equation}
 
 Then contribution of the the shock \(l\) to the forecast error variances of variable \(k\) at time \(h\) can be, generally, written in a for of the following three dimentional array
 
-\begin{equation} \label{eq:13}
+\begin{equation} \label{eq:10}
 		\theta_{h, k l}=\frac{\sum_{j=0}^{h-1}\left(\mathbf{e}_{k} \mathbf{C}_{j} \mathbf{e}_{l}^{\prime}\right)^{2}}{\sum_{j=0}^{h-1} \mathbf{e}_{k} \mathbf{C}_{j} \mathbf{C}_{j}^{\prime} \mathbf{e}_{k}^{\prime}}
 \end{equation}
 
@@ -199,21 +177,16 @@ Then contribution of the the shock \(l\) to the forecast error variances of vari
 
 \section{Results}
 
-\begin{table}
-\label{table:3}
+\blindtext
+
+\begin{table}[h]
+\label{table:2}
 \caption{Restricted Long-run Responses}
 \centering
 \input{../output/tables/C1.txt}
 \end{table}
 
-\begin{itemize}
-\item Price index:
-\begin{itemize}
-\item 1700-1823: \citet{schumpeter38}, in \citet[p. 468-469]{mitchelldeane71}
-\item 1823-1913: \citet[p. 863-864]{mitchelle2003}
-\end{itemize}
-
-\item Industrial production: \citet[p. 725-727]{craftsharley92}
+\blindtext
 
 \end{itemize}
 
@@ -223,8 +196,13 @@ Then contribution of the the shock \(l\) to the forecast error variances of vari
     \includegraphics[width=\textwidth]{../output/figures/IR.pdf} 
 \end{figure}
 
-To be discussed.
+\blindtext
 
+\begin{figure}[H]
+    \centering
+\caption{Forecast Error Variance Decomposition}
+    \includegraphics[width=\textwidth]{../output/figures/FEVD.pdf} 
+\end{figure}
 \pagebreak
 
 \begin{appendices}
