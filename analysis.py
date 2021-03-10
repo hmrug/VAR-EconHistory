@@ -6,10 +6,12 @@ from numpy.linalg import inv
 import pandas as pd
 from tools import export, datafeed
 import matplotlib.pyplot as plt
-import seaborn as sns
-
-sns.set_theme()
-plt.rcParams.update({'font.size': 16}) 
+pd.set_option('display.precision',2)
+plt.rcParams.update({
+    'font.size': 16,
+    "text.usetex": True,
+    "font.family": "sans-serif",
+    "font.sans-serif": ["Helvetica"]})
 
 # Loading up data
 data_name = 'USA.xls' # <--- Input
@@ -19,7 +21,7 @@ data_mat = datafeed.data_mat(data_name)
 # VAR
 
 # Model parameters (Inputs)
-p = 6 # Order of VAR
+p = 12 # Order of VAR
 const = 1 # Constant (yes/no)
 h = 30 # Forecast horizon
 
@@ -85,15 +87,15 @@ Cs = np.cumsum(C,axis=0)
 
 # Plots of impulse responses
 horizon = np.arange(h+1) # x-axis
-shocks = ['Supply Shock','Demand Shock'] # OR = [r'$\mathrm{\epsilon_S}','Demand Error']
-response = ['Output','Prices']
-#in %
+shock=[r'$\mathrm{\epsilon_S}$',r'$\mathrm{\epsilon_D}$']
+response=[r'$\mathrm{Y}$',r'$\mathrm{P}$']
+
 Cs1 = 100*Cs[:,0,0]
 Cs2 = 100*Cs[:,0,1]
 Cs3 = 100*Cs[:,1,0]
 Cs4 = 100*Cs[:,1,1]
 
-fig_IR, ax = plt.subplots(2,2,figsize=[4*4,3*4])
+fig_IR, ax = plt.subplots(2,2,figsize=[16,12])
 
 ax[0,0].plot(horizon,Cs1,lw='4')
 ax[0,0].axhline(y=100*C1[0,0],c='k',lw='2',ls='--')
@@ -106,15 +108,14 @@ ax[1,1].axhline(y=100*C1[1,1],c='k',lw='2',ls='--')
 
 for i in np.arange(2):
     ax[1,i].set_xlabel('Horizon')
-    ax[i,0].set_ylabel('Response (%)')
+    ax[i,0].set_ylabel('Response (\%)')
     for j in np.arange(2):
         ax[i,j].spines['right'].set_visible(False)
         ax[i,j].spines['top'].set_visible(False)
-        ax[i,j].set_title(shocks[j] + ' --> ' + response[i]
-                          ,fontweight='bold')
+        ax[i,j].set_title(shock[j] + r' $\rightarrow$ ' + response[i])
 ax[1,0].legend(['Response','Long-run'],
                loc='lower left',
-               bbox_to_anchor= (0.0, -0.2),
+               bbox_to_anchor= (0,-0.28),
                ncol=2,borderaxespad=0,frameon=True)
 plt.tight_layout()
 
@@ -142,7 +143,7 @@ theta2 = 100*theta[:,0,1]
 theta3 = 100*theta[:,1,0]
 theta4 = 100*theta[:,1,1]
 
-fig_FEVD, ax = plt.subplots(2,2,figsize=[4*4,3*4])
+fig_FEVD, ax = plt.subplots(2,2,figsize=[16,12])
 
 ax[0,0].plot(horizon,theta1,lw='4')
 ax[0,0].axhline(y=100*theta_long[0,0],c='k',lw='2',ls='--')
@@ -155,16 +156,22 @@ ax[1,1].axhline(y=100*theta_long[1,1],c='k',lw='2',ls='--')
 
 for i in np.arange(2):
     ax[1,i].set_xlabel('Horizon')
-    ax[i,0].set_ylabel('Contribution (%)')
+    ax[i,0].set_ylabel('Contribution (\%)')
     for j in np.arange(2):
         ax[i,j].spines['right'].set_visible(False)
         ax[i,j].spines['top'].set_visible(False)
-        ax[i,j].set_title(shocks[j] + ' --> ' + response[i]
-                          ,fontweight='bold')
+        ax[i,j].set_title(shock[j] + r' $\rightarrow$ ' + response[i])
+ax[1,0].legend(['Contribution','Long-run'],
+               loc='lower left',
+               bbox_to_anchor= (0,-0.28),
+               ncol=2,borderaxespad=0,frameon=True)
 plt.tight_layout()
+
+# C(1) table
+C1_df = pd.DataFrame(C1,index=['Output','Prices'],columns=['Supply','Demand'])*100
 
 # =============================================
 # Exports
 export.figure(fig_IR,'IR.pdf')
 export.figure(fig_FEVD,'FEVD.pdf')
-export.matrix(C1,'C1.csv')
+export.table(C1_df,'C1.txt')
