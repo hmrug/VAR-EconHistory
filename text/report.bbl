@@ -1,0 +1,24 @@
+\begin{thebibliography}{4}
+\newcommand{\enquote}[1]{``#1''}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Blanchard and Quah(1989)}]{blanchardquah89}
+Blanchard, O.~J. and Quah, D. (1989), \enquote{The Dynamic Effects of Aggregate
+  Demand and Supply Disturbances.} {\em American Economic Review\/} {\bf 79},
+  655--673.
+
+\bibitem[{Bordo and Haubrich(2012)}]{bordo2012}
+Bordo, M.~D. and Haubrich, J.~G. (2012), \enquote{Deep Recessions, Fast
+  Recoveries, and Financial Crises: Evidence from the American Record.} Working
+  Paper 18194, National Bureau of Economic Research.
+
+\bibitem[{Favero(2001)}]{favero2001}
+Favero, C.~A. (2001), {\em Applied Macroeconometrics\/}. Oxford: Oxford
+  University Press.
+
+\bibitem[{Ravn and Uhlig(1997)}]{morten1997}
+Ravn, M. and Uhlig, H. (1997), \enquote{On adjusting the HP filter for the
+  frequency of observations.} {\em The Review of Economics and Statistics\/}
+  {\bf 84}.
+
+\end{thebibliography}

@@ -14,4 +14,4 @@ mkdir -p ./output/figures ./output/data ./output/tables
 # Compile latex
 cd ./text
 pdflatex report.tex
-mv report.pdf ../
+cp report.pdf ../Essay.pdf

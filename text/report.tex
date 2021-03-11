@@ -4,7 +4,6 @@
 \usepackage[skip=0.5\baselineskip]{caption}
 \usepackage[title]{appendix}
 \usepackage{blindtext}
-\bibliographystyle{unsrtnat}
 
 \onehalfspacing
 \newcommand{\bs}[1]{\boldsymbol{#1}}
@@ -41,7 +40,7 @@ Aaa.
 
 \section{Data}
 
-The dataset consists of 252 monthly observations of American Industrial Production (IP) and Consumer Index Prices (CPI) from January 1919 to December 1939. The data can be split into two periods, i.e. pre-Great Depression and Great Depression. The first one I define as the time between the beginning of the data sample, January 1919, to the upper-turning point in May 1929, the second one follows from that point to the end of the time-series. On figure \ref{fig:fig1} and figure \ref{fig:fig2} the two periods are separated by a red vertical line Some simple statistics are shown in the table below, and a table with yearly data for the time-series can be found in the appendix. 
+The dataset consists of 252 monthly observations of American Industrial Production (IP) and Consumer Index Prices (CPI) from January 1919 to December 1939. The data can be split into two periods, i.e. pre-Great Depression and Great Depression. The first one I define as the time between the beginning of the data sample, January 1919, to the upper-turning point in May 1929, the second one follows from that point to the end of the time-series. On figure \ref{fig:1} and figure \ref{fig:2} the two periods are separated by a red vertical line Some simple statistics are shown in the table below, and a table with yearly data for the time-series can be found in the appendix. 
 
 \begin{table}[h]
 \label{table:1}
@@ -55,20 +54,20 @@ After the war there was a sharp increase in the price level index from 57 in the
 \begin{figure}[H]
     \centering
 \caption{Consumer Price Index}
-\label{fig:fig1}
+\label{fig:1}
     \includegraphics[width=\textwidth]{../output/figures/ts_CPI.pdf} 
 \end{figure}
 
 Pre-Great Depression Industrial Production, except the time of 1920-21 depression, was growing steadily. At the peak, IP was about 40 and it took almost 7 years of depression and recovery to come back to that level. Recovered production didn't stay that high for long. At the end of the inter-war period we can see a very sudden collapse of IP. It is the Recession of 1937-38, according to \cite{bordo2012}, the third-worst contraction of the twentieth century. 
 
-To better understand the business cycle in the interwar United States I detrended the time-series with a Hodrick-Prescot filter (see Figure \ref{fig:fig2}. For the smoothing parameter I went with recommendation of \cite{morten1997} and set \(\mu\) to 129600. There were five periods when Industrial Production deviated by more than 5 points from the trend. However, the most distinct seems to be the interval from 1930 to 1933 when not only the cycle component but also the trend component was falling for a prolonged period of time. 
+To better understand the business cycle in the interwar United States I detrended the time-series with a Hodrick-Prescot filter (see Figure \ref{fig:2}. For the smoothing parameter I went with recommendation of \cite{morten1997} and set \(\mu\) to 129600. There were five periods when Industrial Production deviated by more than 5 points from the trend. However, the most distinct seems to be the interval from 1930 to 1933 when not only the cycle component but also the trend component was falling for a prolonged period of time. 
 
 \pagebreak
 
 \begin{figure}[t]
     \centering
 \caption{Industrial Production}
-\label{fig:fig2}
+\label{fig:2}
     \includegraphics[width=\textwidth]{../output/figures/ts_IP.pdf} 
 \end{figure}
 
@@ -179,6 +178,8 @@ Then contribution of the the shock \(l\) to the forecast error variances of vari
 
 \blindtext
 
+The long-run equilibrium matrix \(\bf C (1)\) 
+
 \begin{table}[h]
 \label{table:2}
 \caption{Restricted Long-run Responses}
@@ -187,8 +188,6 @@ Then contribution of the the shock \(l\) to the forecast error variances of vari
 \end{table}
 
 \blindtext
-
-\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -217,6 +216,7 @@ Then contribution of the the shock \(l\) to the forecast error variances of vari
 
 \pagebreak
 
-\bibliography{bib}
+\bibliography{sqwg}
+\bibliographystyle{eeh}
 
 \end{document}
