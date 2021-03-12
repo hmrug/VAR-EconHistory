@@ -27,12 +27,13 @@ Can be easily reproduced on any POSIX compliant system (linux, macOS) by running
 
 # How to reproduce
 
-1. Install python, latex and all dependencies.
+1. Clone the repository;
+2. Install python, latex and all dependencies;
     - All python dependencies should be available in the base version of anaconda;
     - For miniconda/anaconda all packages can be installed by creating a new environment from *environment.yml* file. Command: *conda env create -f environment.yml*;
 2. Make *write.sh* file executable (*chmod +x write.sh* in the terminal) and run it by typing *./write.sh*.
 
-If you run windows:
+**If you run windows:**
 
 1. Remove everything in *output/tables/*, but don't delete the directory;
 2. Run *descriptive_statistics.py* and then *analysis.py*;
