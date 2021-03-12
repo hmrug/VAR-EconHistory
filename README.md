@@ -33,6 +33,7 @@ Can be easily reproduced on any POSIX compliant system (linux, macOS) by running
 2. Make *write.sh* file executable (*chmod +x write.sh* in the terminal) and run it by typing *./write.sh*.
 
 If you run windows:
+
 1. Remove everything in *output/tables/*, but don't delete the directory;
 2. Run *descriptive_statistics.py* and then *analysis.py*;
 3. Go to *text/* directory and run *report.tex* in your latex IDE or with pdflatex. By doing this the final file *report.pdf* will be generated.
