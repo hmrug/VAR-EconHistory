@@ -18,8 +18,8 @@ Data: 01/1919 - 12/1939, monthly.
     - Scipy 1.6.1+
     - Matplotlib 3.3.4+
 - Full-fledged latex
-    - Debian-based linux: apt-get install texlive-full
-    - Arch-based linux: pacman -S texlive-most texlive-lang
+    - Debian-based linux: *apt-get install texlive-full*
+    - Arch-based linux: *pacman -S texlive-most texlive-lang*
     - MacOS: https://tug.org/mactex/
     - Windows: https://miktex.org/download/
 
@@ -33,9 +33,9 @@ Can be easily reproduced on any POSIX compliant system (linux, macOS) by running
 2. Make *write.sh* file executable (*chmod +x write.sh* in the terminal) and run it by typing *./write.sh*.
 
 If you run windows:
-    1. Remove everything in *output/tables/*, but don't delete the directory;
-    2. Run *descriptive_statistics.py* and then *analysis.py*;
-    3. Go to *text/* directory and run *report.tex* in your latex IDE or with pdflatex. By doing this the final file *report.pdf* will be generated.
+1. Remove everything in *output/tables/*, but don't delete the directory;
+2. Run *descriptive_statistics.py* and then *analysis.py*;
+3. Go to *text/* directory and run *report.tex* in your latex IDE or with pdflatex. By doing this the final file *report.pdf* will be generated.
 
 # Why I don't use Waf
 
