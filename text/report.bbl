@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{6}
 \newcommand{\enquote}[1]{``#1''}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
@@ -15,6 +15,14 @@ Bordo, M.~D. and Haubrich, J.~G. (2012), \enquote{Deep Recessions, Fast
 \bibitem[{Favero(2001)}]{favero2001}
 Favero, C.~A. (2001), {\em Applied Macroeconometrics\/}. Oxford: Oxford
   University Press.
+
+\bibitem[{Friedman and Schwartz(1963)}]{friedman1963}
+Friedman, M. and Schwartz, A. (1963), {\em A Monetary History of the United
+  States, 1867–1960\/}. National Bureau of Economic Research, Inc.
+
+\bibitem[{Kindleberger(1936)}]{kindleberger1973}
+Kindleberger, C.~P. (1936), {\em The World in Depression, 1929-1939\/}.
+  Berkeley: University of California Press.
 
 \bibitem[{Ravn and Uhlig(1997)}]{morten1997}
 Ravn, M. and Uhlig, H. (1997), \enquote{On adjusting the HP filter for the
